@@ -4,33 +4,34 @@ import 'package:navigationapp/firstpage.dart';
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
 
-
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-    backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.blueAccent,
       body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
 
-          children: [
+              children: [
+              Text('This is Home page', style: TextStyle(fontSize: 30)),
 
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Firstpage()),
+              );
+            },
+            style: ButtonStyle(alignment: Alignment.center),
 
+            child: Text('goto first page'),
+          ),
 
-              ElevatedButton(onPressed: (){
-                Navigator.push(context,MaterialPageRoute(builder: (context)=>Firstpage()));
-              },
-                style: ButtonStyle(alignment: Alignment.center),
-                child: Text('goto first page',),
-              ),
 
           ],
         ),
       ),
-
     );
   }
 }
