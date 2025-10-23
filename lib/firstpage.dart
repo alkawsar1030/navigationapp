@@ -18,7 +18,7 @@ class Firstpage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigator.pop(context);
-                Navigator.pushNamed(context, '/second');
+                Navigator.pushReplacementNamed(context, '/second');
               },
               style: ButtonStyle(alignment: Alignment.center),
               child: Text('goto second  page'),
@@ -29,7 +29,7 @@ class Firstpage extends StatelessWidget {
 
               },
               style: ButtonStyle(alignment: Alignment.center),
-              child: Text('goto home page Direcr'),
+              child: Text('goto home/previous page Direcr'),
             ),
 
 
