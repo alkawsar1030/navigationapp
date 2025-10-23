@@ -24,11 +24,9 @@ class Secondpage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Homepage()),
-                );
+
+                Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false,);
+
               },
 
               style: ButtonStyle(alignment: Alignment.center),

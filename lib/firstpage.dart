@@ -25,7 +25,7 @@ class Firstpage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-               Navigator.pop(context);
+               Navigator.pop(context,'KawsarUllah');
 
               },
               style: ButtonStyle(alignment: Alignment.center),

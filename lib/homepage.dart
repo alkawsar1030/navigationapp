@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:navigationapp/firstpage.dart';
 
 
 class Homepage extends StatelessWidget {
@@ -28,8 +29,12 @@ class Homepage extends StatelessWidget {
               Text('This is Home page', style: TextStyle(fontSize: 30)),
 
           ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, '/first');
+            onPressed: () async {
+              final resust = await Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Firstpage(),));
+              if(resust!=null){
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Data received : $resust')));
+              }
             },
             style: ButtonStyle(alignment: Alignment.center),
 
