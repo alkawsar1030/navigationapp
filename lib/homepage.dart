@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:navigationapp/firstpage.dart';
+
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
+
+  void safePop(BuildContext context) {
+    if (Navigator.canPop(context)) {
+      Navigator.pop(context);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('⚠️ No page left to go back!')),
+      );
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +36,21 @@ class Homepage extends StatelessWidget {
             child: Text('goto first page'),
           ),
 
+          ElevatedButton(
+            onPressed: () {
+              safePop(context);
+            },
+            style: ButtonStyle(alignment: Alignment.center),
+
+            child: Text('goto next page'),
+          ),
+
+
 
           ],
+
+
+
         ),
       ),
     );

@@ -23,13 +23,20 @@ class MyApp extends StatelessWidget {
       //home:Homepage(),
       initialRoute: '/home',
       routes: {
-        '/login':(context)=>Homepage(),
+        '/home':(context)=>Homepage(),
         '/first':(context)=>Firstpage(),
         '/second':(context)=>Secondpage(),
       },
-      onUnknownRoute: (settings){
-       return MaterialPageRoute(builder: (context) => Scaffold(body: Center(child: Text('This page is ono available 404!!')),),);
-      }
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (context) => Scaffold(
+            appBar: AppBar(title: const Text('Route Not Found')),
+            body: const Center(
+              child: Text('⚠️ Unknown route detected!'),
+            ),
+          ),
+        );
+      },
     );
   }
 }
