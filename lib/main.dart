@@ -23,10 +23,13 @@ class MyApp extends StatelessWidget {
       //home:Homepage(),
       initialRoute: '/home',
       routes: {
-        '/home':(context)=>Homepage(),
+        '/login':(context)=>Homepage(),
         '/first':(context)=>Firstpage(),
         '/second':(context)=>Secondpage(),
       },
+      onUnknownRoute: (settings){
+       return MaterialPageRoute(builder: (context) => Scaffold(body: Center(child: Text('This page is ono available 404!!')),),);
+      }
     );
   }
 }
