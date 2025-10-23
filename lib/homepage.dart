@@ -18,10 +18,7 @@ class Homepage extends StatelessWidget {
 
           ElevatedButton(
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Firstpage()),
-              );
+              Navigator.pushNamed(context, '/first');
             },
             style: ButtonStyle(alignment: Alignment.center),
 

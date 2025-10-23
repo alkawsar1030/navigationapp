@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:navigationapp/firstpage.dart';
 import 'package:navigationapp/homepage.dart';
+import 'package:navigationapp/secondpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +20,13 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
 
-      home:Homepage(),
+      //home:Homepage(),
+      initialRoute: '/home',
+      routes: {
+        '/home':(context)=>Homepage(),
+        '/first':(context)=>Firstpage(),
+        '/second':(context)=>Secondpage(),
+      },
     );
   }
 }

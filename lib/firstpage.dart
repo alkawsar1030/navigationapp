@@ -18,10 +18,7 @@ class Firstpage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 // Navigator.pop(context);
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => Secondpage()),
-                );
+                Navigator.pushNamed(context, '/second');
               },
               style: ButtonStyle(alignment: Alignment.center),
               child: Text('goto second  page'),
