@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       routes: {
         '/home':(context)=>Homepage(),
-        '/first':(context)=>Firstpage(),
+        //'/first':(context)=>Firstpage(),
         '/second':(context)=>Secondpage(),
       },
       onUnknownRoute: (settings) {

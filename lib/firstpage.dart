@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 
 class Firstpage extends StatelessWidget {
-  const Firstpage({super.key});
+  const Firstpage({super.key, required this.data});
+
+  final String data;
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +16,12 @@ class Firstpage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
 
           children: [
-            Text('This is First page', style: TextStyle(fontSize: 30)),
+            Text('This data is come form home $data, (1stpage)', style: TextStyle(fontSize: 30)),
             ElevatedButton(
               onPressed: () {
                 // Navigator.pop(context);
-                Navigator.pushReplacementNamed(context, '/second');
+               // Navigator.pushReplacementNamed(context, '/second');
+                Navigator.pushNamed(context, '/second');
               },
               style: ButtonStyle(alignment: Alignment.center),
               child: Text('goto second  page'),

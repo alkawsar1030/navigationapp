@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:navigationapp/homepage.dart';
+
 
 class Secondpage extends StatelessWidget {
   const Secondpage({super.key});
@@ -25,7 +25,9 @@ class Secondpage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
 
-                Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false,);
+               //Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false,);//whole stack will be remove and it will push home page/other targated page only
+               Navigator.pushReplacementNamed(context,'/home');//only current page will be removed stuck will remain unchnged on current page/second page will be removed
+               // Navigator.pushNamed(context, '/home');
 
               },
 

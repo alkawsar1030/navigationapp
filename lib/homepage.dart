@@ -10,7 +10,7 @@ class Homepage extends StatelessWidget {
       Navigator.pop(context);
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('⚠️ No page left to go back!')),
+        const SnackBar(content: Text('⚠️ No!. there is no previous page !')),
       );
     }
   }
@@ -31,7 +31,7 @@ class Homepage extends StatelessWidget {
           ElevatedButton(
             onPressed: () async {
               final resust = await Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => Firstpage(),));
+                  MaterialPageRoute(builder: (context) => Firstpage(data: 'Hello i am  from home',),));
               if(resust!=null){
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Data received : $resust')));
               }
@@ -48,7 +48,7 @@ class Homepage extends StatelessWidget {
             },
             style: ButtonStyle(alignment: Alignment.center),
 
-            child: Text('goto next page'),
+            child: Text('goto previous page'),
           ),
 
 
@@ -62,3 +62,4 @@ class Homepage extends StatelessWidget {
     );
   }
 }
+
